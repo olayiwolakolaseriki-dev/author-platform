@@ -123,20 +123,22 @@
                 Please indicate the nature of your inquiry for timely routing.
               </p>
 
-              <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.25rem; font-family: var(--font-sans);">
+              <form id="contactForm" action="https://formspree.io/f/xjygbjyv" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem; font-family: var(--font-sans);">
+                <input type="hidden" name="_subject" value="New Direct Inquiry - olayiwolakolaseriki.com">
+                <input type="hidden" name="form_source" value="Contact Page Inquiry">
                 <div>
                   <label for="name" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem;">Your Name *</label>
-                  <input type="text" id="name" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
+                  <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
                 </div>
 
                 <div>
                   <label for="email" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem;">Email Address *</label>
-                  <input type="email" id="email" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
+                  <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
                 </div>
 
                 <div>
                   <label for="inquiryType" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem;">Purpose of Inquiry *</label>
-                  <select id="inquiryType" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
+                  <select id="inquiryType" name="inquiry_type" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
                     <option value="representation">Literary Representation / Agency</option>
                     <option value="rights">Publishing / Translation Rights</option>
                     <option value="speaking">Speaking / Lecture / Panel</option>
@@ -147,14 +149,14 @@
 
                 <div>
                   <label for="message" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem;">Message *</label>
-                  <textarea id="message" rows="5" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;"></textarea>
+                  <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">Send Inquiry</button>
+                <button type="submit" id="contactSubmitBtn" class="btn btn-primary" style="margin-top: 0.5rem;">Send Inquiry</button>
               </form>
 
               <div id="contactSuccess" style="display: none; margin-top: 1.25rem; padding: 1rem; background-color: var(--accent-forest-light); color: var(--accent-forest); border-radius: 6px; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 500;">
-                Thank you for your message. Your inquiry has been received.
+                Thank you for your message. Your inquiry has been received and routed to Layi's desk.
               </div>
             </div>
           </div>
