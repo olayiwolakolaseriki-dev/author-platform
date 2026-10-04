@@ -169,10 +169,11 @@ p {
 
 .brand-tagline {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #9B7028;
 }
 
 .footer-monogram {
