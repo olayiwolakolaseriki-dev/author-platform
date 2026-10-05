@@ -173,7 +173,7 @@
 
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
               <button class="btn btn-primary" data-open-excerpt>Read Prologue Excerpt</button>
-              <a href="#waitlist" class="btn btn-secondary">Join ARC / Early Reader List</a>
+              <a href="#arc" class="btn btn-secondary">Request an Advance Reader Copy (ARC)</a>
               <a href="#rights" class="btn btn-secondary">Agent & Rights Information</a>
             </div>
           </div>
@@ -374,34 +374,73 @@
       </div>
     </section>
 
-    <!-- ARC / Reader Waitlist Form -->
-    <section id="waitlist" style="padding: 4.5rem 0; background-color: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+    <!-- Deliberate Advance Reader Copy (ARC) Section -->
+    <section id="arc" style="padding: 5rem 0; background-color: var(--bg-surface); border-top: 1px solid var(--border-subtle); position: relative;">
+      <span id="waitlist" style="position: absolute; top: -60px;"></span>
       <div class="container-narrow">
-        <div class="newsletter-box">
-          <p class="eyebrow" style="margin-bottom: 0.5rem;">Early Reader Access</p>
-          <h2 style="font-size: 2.25rem; margin-bottom: 0.8rem;">Join the Advance Reader Team (ARC)</h2>
-          <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-            Be among the first to read advance chapters, receive early review copies prior to commercial release, and participate in private discussions with Olayiwola Kola-Seriki.
-          </p>
+        <div class="editorial-card" style="padding: 3rem 2.5rem; background: var(--bg-card); border: 1px solid var(--border-medium); border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);">
+          <div style="text-align: center; max-width: 640px; margin: 0 auto 2.5rem;">
+            <p class="eyebrow" style="margin-bottom: 0.6rem;">Advance Reader Access</p>
+            <h2 style="font-size: clamp(1.85rem, 4vw, 2.35rem); line-height: 1.25; margin-bottom: 1rem;">
+              Interested in reading <em>The Borrowed Map</em> before publication?
+            </h2>
+            <p style="font-size: 1.12rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">
+              A limited number of Advance Reader Copies will be made available to selected early readers, reviewers, and cultural commentators.
+            </p>
+          </div>
 
-          <form class="newsletter-form" action="https://formspree.io/f/xjygbjyv" method="POST" aria-label="ARC Waitlist Form">
+          <form id="arcForm" action="https://formspree.io/f/xjygbjyv" method="POST" style="display: flex; flex-direction: column; gap: 1.35rem; font-family: var(--font-sans); max-width: 600px; margin: 0 auto;">
             <input type="hidden" name="_to" value="info@olayiwolakolaseriki.com">
-            <input type="hidden" name="_subject" value="New Advance Reader Copy (ARC) Request - olayiwolakolaseriki.com">
-            <input type="hidden" name="form_source" value="The Borrowed Map ARC Waitlist">
-            <input 
-              type="email" 
-              name="email"
-              class="newsletter-input" 
-              placeholder="Your preferred email address" 
-              required 
-            />
-            <button type="submit" class="btn btn-primary">Request ARC Access</button>
+            <input type="hidden" name="_subject" value="New Advance Reader Copy (ARC) Application - The Borrowed Map">
+            <input type="hidden" name="form_source" value="Book Page ARC Application">
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+              <div>
+                <label for="arcName" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-primary);">Your Full Name *</label>
+                <input type="text" id="arcName" name="name" required placeholder="e.g. Chinelo Okonkwo" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
+              </div>
+              <div>
+                <label for="arcEmail" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-primary);">Email Address *</label>
+                <input type="email" id="arcEmail" name="email" required placeholder="you@domain.com" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
+              </div>
+            </div>
+
+            <div>
+              <label for="arcReaderType" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-primary);">Your Primary Background / Role *</label>
+              <select id="arcReaderType" name="reader_type" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff; color: var(--text-primary);">
+                <option value="" disabled selected>Select your primary profile...</option>
+                <option value="reviewer_critic">Book Reviewer / Literary Critic</option>
+                <option value="essayist_writer">Cultural Essayist / Columnist / Author</option>
+                <option value="journalist_media">Journalist / Podcast Host / Media Professional</option>
+                <option value="academic_educator">Academic / University Researcher / Educator</option>
+                <option value="corporate_executive">Corporate Leader / Finance / Tech Executive</option>
+                <option value="discerning_reader">Discerning Early Reader / Community Thinker</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="arcPlatform" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-primary);">Publication, Platform, or Online Profile <span style="font-weight: 400; color: var(--text-muted);">(Optional)</span></label>
+              <input type="text" id="arcPlatform" name="platform_url" placeholder="e.g. Substack, publication, LinkedIn, or Twitter/X" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;">
+            </div>
+
+            <div>
+              <label for="arcNote" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-primary);">What draws you to this manuscript? <span style="font-weight: 400; color: var(--text-muted);">(Optional, 1–2 sentences)</span></label>
+              <textarea id="arcNote" name="reading_interest" rows="3" placeholder="A brief note on why the themes of faith, ambition, or African modernity resonate with you..." style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-medium); border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff;"></textarea>
+            </div>
+
+            <button type="submit" id="arcSubmitBtn" class="btn btn-primary" style="margin-top: 0.5rem; width: 100%; justify-content: center; padding: 0.85rem 1.5rem; font-size: 1rem;">
+              Request an Advance Reader Copy
+            </button>
+
+            <p style="font-size: 0.82rem; color: var(--text-muted); text-align: center; margin: 0.35rem 0 0; line-height: 1.5;">
+              Advance Reader Copies are digital, watermarked editions provided for review purposes prior to official publication.
+            </p>
           </form>
-          <div class="newsletter-feedback" style="display: none; margin-top: 1.2rem; font-family: var(--font-sans); font-size: 0.95rem; color: var(--accent-forest); font-weight: 500;"></div>
-          
-          <p style="font-family: var(--font-sans); font-size: 0.82rem; color: var(--text-muted); margin-top: 1rem;">
-            Advance reader copies will be distributed digitally to selected readers prior to official publication.
-          </p>
+
+          <div id="arcSuccess" style="display: none; max-width: 600px; margin: 1.5rem auto 0; padding: 1.25rem 1.5rem; background-color: var(--accent-forest-light); color: var(--accent-forest); border-radius: 8px; font-family: var(--font-sans); font-size: 0.98rem; line-height: 1.6; text-align: center;">
+            <strong>Thank you for requesting an Advance Reader Copy.</strong><br>
+            Your request has been received by Layi's team. Selected readers and reviewers will receive early access details as digital advance review copies are distributed.
+          </div>
         </div>
       </div>
     </section>
@@ -478,10 +517,10 @@
 
       <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <span style="font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted);">
-          Want to receive subsequent chapters?
+          Interested in reading the complete manuscript before publication?
         </span>
-        <a href="#waitlist" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.2rem;">
-          Join ARC Waitlist &rarr;
+        <a href="#arc" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.2rem;">
+          Request an ARC &rarr;
         </a>
       </div>
     </div>
@@ -513,7 +552,7 @@
             <li><a href="/the-borrowed-map">The Borrowed Map</a></li>
             <li><a href="#" data-open-excerpt>Read Excerpt</a></li>
             <li><a href="/the-borrowed-map#themes">Core Themes</a></li>
-            <li><a href="/the-borrowed-map#waitlist">ARC Reader Waitlist</a></li>
+            <li><a href="/the-borrowed-map#arc">Request an ARC</a></li>
           </ul>
         </div>
 

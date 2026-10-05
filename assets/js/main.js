@@ -153,4 +153,47 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Advance Reader Copy (ARC) Form Handler
+  const arcForm = document.getElementById('arcForm');
+  const arcSuccess = document.getElementById('arcSuccess');
+  const arcSubmitBtn = document.getElementById('arcSubmitBtn');
+
+  if (arcForm) {
+    arcForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!arcSubmitBtn) return;
+
+      const originalBtnText = arcSubmitBtn.textContent;
+      arcSubmitBtn.textContent = 'Submitting Request...';
+      arcSubmitBtn.disabled = true;
+
+      const endpoint = arcForm.getAttribute('action') || 'https://formspree.io/f/xjygbjyv';
+      const formData = new FormData(arcForm);
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          arcForm.reset();
+          arcForm.style.display = 'none';
+          if (arcSuccess) {
+            arcSuccess.style.display = 'block';
+          }
+        } else {
+          throw new Error('ARC submission error');
+        }
+      } catch (error) {
+        arcSubmitBtn.textContent = originalBtnText;
+        arcSubmitBtn.disabled = false;
+        alert('There was a problem submitting your request. Please email info@olayiwolakolaseriki.com directly.');
+      }
+    });
+  }
 });
