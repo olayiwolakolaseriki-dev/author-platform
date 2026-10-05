@@ -175,6 +175,7 @@
               </p>
 
               <form id="contactForm" action="https://formspree.io/f/xjygbjyv" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem; font-family: var(--font-sans);">
+                <input type="hidden" name="_to" value="info@olayiwolakolaseriki.com">
                 <input type="hidden" name="_subject" value="New Direct Inquiry - olayiwolakolaseriki.com">
                 <input type="hidden" name="form_source" value="Contact Page Inquiry">
                 <div>
@@ -278,17 +279,6 @@
   </footer>
 
   <script src="/assets/js/main.js"></script>
-  <script>
-    const contactForm = document.getElementById('contactForm');
-    const contactSuccess = document.getElementById('contactSuccess');
-    if (contactForm && contactSuccess) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        contactForm.style.display = 'none';
-        contactSuccess.style.display = 'block';
-      });
-    }
-  </script>
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "93169b39a39d4640a1ff8a6bffdba1cd"}'></script>
   <!-- End Cloudflare Web Analytics -->
