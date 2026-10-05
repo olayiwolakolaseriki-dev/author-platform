@@ -140,6 +140,7 @@ p {
 .brand-monogram-nav {
   width: 44px;
   height: 44px;
+  aspect-ratio: 1 / 1;
   border-radius: 6px;
   object-fit: cover;
   border: 1px solid rgba(184, 134, 11, 0.28);
@@ -179,6 +180,7 @@ p {
 .footer-monogram {
   width: 46px;
   height: 46px;
+  aspect-ratio: 1 / 1;
   border-radius: 6px;
   object-fit: cover;
   border: 1px solid rgba(184, 134, 11, 0.25);
