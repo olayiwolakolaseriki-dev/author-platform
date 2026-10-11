@@ -48,15 +48,20 @@
   <meta name="twitter:image" content="https://olayiwolakolaseriki.com/assets/images/author-portrait-1200.jpg">
   <meta name="twitter:image:alt" content="Olayiwola Kola-Seriki Author Portrait">
 
-  <!-- Preload critical brand monogram -->
+  <!-- Critical Performance Preloads -->
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/newsreader-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plus-jakarta-sans-400.woff2" crossorigin>
   <link rel="preload" as="image" href="/assets/images/brand-monogram-nav.webp" type="image/webp">
 
-  <!-- Google Fonts -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- Non-Blocking Google Fonts Fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
   
   <!-- Schema.org JSON-LD: Service Entity -->
   <script type="application/ld+json">
@@ -253,7 +258,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/main.js"></script>
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "93169b39a39d4640a1ff8a6bffdba1cd"}'></script>
   <!-- End Cloudflare Web Analytics -->

@@ -47,15 +47,21 @@
   <meta name="twitter:image" content="https://olayiwolakolaseriki.com/assets/images/author-portrait-1200.jpg">
   <meta name="twitter:image:alt" content="Olayiwola Kola-Seriki Author Portrait">
   
-  <!-- Performance Preloads -->
+  <!-- Critical Performance Preloads -->
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/newsreader-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plus-jakarta-sans-400.woff2" crossorigin>
   <link rel="preload" as="image" href="/assets/images/brand-monogram-nav.webp" type="image/webp">
-  
-  <!-- Google Fonts Optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="/assets/images/author-portrait.webp" type="image/webp" fetchpriority="high">
   
   <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Non-Blocking Google Fonts Fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
   
   <!-- Schema.org JSON-LD: ProfilePage & Comprehensive Person Entity -->
   <script type="application/ld+json">
@@ -265,7 +271,10 @@
         <!-- Official Author Portrait & Insignia -->
         <div style="background: var(--bg-card); border: 1px solid var(--border-medium); border-radius: 12px; padding: 2.5rem 2rem; text-align: center; margin-bottom: 3.5rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);">
           <div style="max-width: 250px; margin: 0 auto 1.5rem; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); border: 1px solid var(--border-medium);">
-            <img src="/assets/images/author-portrait.jpg" width="579" height="864" alt="Olayiwola Kola-Seriki Official Author Portrait" style="width: 100%; height: auto; display: block;" fetchpriority="high" decoding="async">
+            <picture>
+              <source srcset="/assets/images/author-portrait.webp" type="image/webp">
+              <img src="/assets/images/author-portrait.jpg" width="250" height="373" alt="Olayiwola Kola-Seriki Official Author Portrait" style="width: 100%; height: auto; display: block;" fetchpriority="high" decoding="async">
+            </picture>
           </div>
           <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.35rem; letter-spacing: -0.01em;">Olayiwola Kola-Seriki</h3>
           <p class="brand-tagline" style="font-size: 0.75rem; letter-spacing: 0.14em; margin-bottom: 0.85rem;">Author &middot; Essayist &middot; Thinker</p>
@@ -495,7 +504,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/main.js"></script>
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "93169b39a39d4640a1ff8a6bffdba1cd"}'></script>
   <!-- End Cloudflare Web Analytics -->
