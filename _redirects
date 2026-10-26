@@ -1,0 +1,5 @@
+# Cloudflare Pages 301 Canonical Redirects
+# Consolidates www and http traffic to canonical https apex
+https://www.olayiwolakolaseriki.com/* https://olayiwolakolaseriki.com/:splat 301
+http://www.olayiwolakolaseriki.com/* https://olayiwolakolaseriki.com/:splat 301
+http://olayiwolakolaseriki.com/* https://olayiwolakolaseriki.com/:splat 301
