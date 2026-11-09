@@ -54,23 +54,53 @@
 
   <link rel="stylesheet" href="/assets/css/styles.css">
   
-  <!-- Schema.org JSON-LD: Service Entity -->
+  <!-- Schema.org JSON-LD: Service & Event Entities -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Keynotes, Panels & Literary Lectures by Olayiwola Kola-Seriki",
-    "provider": {
-      "@type": "Person",
-      "@id": "https://olayiwolakolaseriki.com/#author",
-      "name": "Olayiwola Kola-Seriki",
-      "alternateName": ["Layi Kola-Seriki", "Doctor Layi", "Quddus Olayiwola Kola-Seriki"],
-      "url": "https://olayiwolakolaseriki.com/",
-      "sameAs": [
-        "https://www.linkedin.com/in/olayiwola-kola-seriki-296878146"
-      ]
-    },
-    "description": "Keynotes, lectures, and panel discussions on faith, ambition, African institutions, and cultural philosophy."
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Keynotes, Panels & Literary Lectures by Olayiwola Kola-Seriki",
+        "provider": {
+          "@type": "Person",
+          "@id": "https://olayiwolakolaseriki.com/#author",
+          "name": "Olayiwola Kola-Seriki",
+          "alternateName": ["Layi Kola-Seriki", "Doctor Layi", "Quddus Olayiwola Kola-Seriki"],
+          "url": "https://olayiwolakolaseriki.com/",
+          "sameAs": [
+            "https://www.linkedin.com/in/olayiwola-kola-seriki-296878146"
+          ]
+        },
+        "description": "Keynotes, lectures, and panel discussions on faith, ambition, African institutions, and cultural philosophy."
+      },
+      {
+        "@type": "EducationEvent",
+        "name": "2026 Freshers' Orientation & Career Panel: Beyond the Classroom",
+        "startDate": "2026-11-03",
+        "location": {
+          "@type": "Place",
+          "name": "Campus Auditorium, Fountain University",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Osogbo",
+            "addressRegion": "Osun State",
+            "addressCountry": "NG"
+          }
+        },
+        "organizer": {
+          "@type": "CollegeOrUniversity",
+          "name": "Fountain University, Osogbo",
+          "url": "https://fuo.edu.ng"
+        },
+        "performer": {
+          "@type": "Person",
+          "name": "Olayiwola Kola-Seriki",
+          "jobTitle": "Keynote Speaker"
+        },
+        "url": "https://fuo.edu.ng/public/index.php/news/fountain-university-alumni-task-freshers-on-skills-career-development-1793968438"
+      }
+    ]
   }
   </script>
 </head>
@@ -175,6 +205,55 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- Selected Speaking Engagements & Institutional Keynotes -->
+        <div style="margin-top: 4.5rem;">
+          <div style="text-align: center; max-width: 680px; margin: 0 auto 2.5rem;">
+            <p class="eyebrow" style="margin-bottom: 0.5rem;">Recent Keynotes &amp; Public Addresses</p>
+            <h2 style="font-size: 2.2rem; margin-bottom: 0.75rem;">Selected Speaking Engagements</h2>
+            <p style="color: var(--text-secondary); font-size: 1.05rem;">
+              Institutional dialogues, university lectures, and leadership addresses on skills, African ambition, and career sovereignty.
+            </p>
+          </div>
+
+          <!-- Engagement Card: Fountain University -->
+          <div class="editorial-card" style="padding: 2.5rem; background: var(--bg-card); border: 1.5px solid var(--border-gold); border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04); margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+              <div>
+                <span class="eyebrow" style="color: var(--accent-terracotta);">Keynote Address &middot; University Career Panel</span>
+                <h3 style="font-size: 1.75rem; margin: 0.35rem 0 0.5rem; color: var(--text-primary);">
+                  2026 Freshers&rsquo; Orientation &amp; Career Panel: &ldquo;Beyond the Classroom&rdquo;
+                </h3>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.4rem;">
+                  <span><strong>Institution:</strong> Fountain University, Osogbo</span>
+                  <span>&bull;</span>
+                  <span><strong>Date:</strong> 3 November 2026</span>
+                  <span>&bull;</span>
+                  <span><strong>Engagement:</strong> Keynote Speaker &middot; Alumnus</span>
+                </div>
+              </div>
+              <a href="https://fuo.edu.ng/public/index.php/news/fountain-university-alumni-task-freshers-on-skills-career-development-1793968438" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.84rem; padding: 0.55rem 1.2rem; align-self: flex-start;">
+                Read University Coverage &rarr;
+              </a>
+            </div>
+
+            <p style="font-size: 1.02rem; line-height: 1.75; color: var(--text-secondary); margin-bottom: 1.5rem;">
+              Invited as distinguished alumnus, CITN Fellow, and finance professional to deliver the keynote address to incoming students at the Campus Auditorium in Osogbo. The address challenged students to move beyond passive reliance on academic paper qualifications alone, focusing on developing practical market-relevant skills, building enduring professional relationships, pursuing entrepreneurial opportunities, and preparing for the changing demands of the modern labour market.
+            </p>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); font-size: 0.84rem; color: var(--text-muted);">
+              <div>
+                <strong>Official Publication:</strong> 
+                <a href="https://fuo.edu.ng/public/index.php/news/fountain-university-alumni-task-freshers-on-skills-career-development-1793968438" target="_blank" rel="noopener noreferrer" style="color: var(--accent-terracotta); text-decoration: underline; margin-left: 0.35rem;">
+                  &ldquo;FUO Alumni Task Freshers on Skills, Career Development&rdquo; (Fountain University)
+                </a>
+              </div>
+              <span style="font-size: 0.8rem; background: var(--bg-surface); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle); color: var(--text-secondary);">
+                Coverage: Official FUO Portal &middot; Campus Auditorium, Osogbo
+              </span>
+            </div>
+          </div>
         </div>
 
         <!-- Speaking Inquiry CTA -->
