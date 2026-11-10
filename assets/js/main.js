@@ -196,4 +196,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Dark/Bright Mode Theme Toggle Handler
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+
+  function getCurrentTheme() {
+    return document.documentElement.getAttribute('data-theme') || 'dark';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch (e) {}
+
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#12100E' : '#FAF8F5');
+    }
+  }
+
+  themeToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const current = getCurrentTheme();
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+    });
+  });
 });
