@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-      metaThemeColor.setAttribute('content', theme === 'dark' ? '#12100E' : '#FAF8F5');
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#0B0B0D' : '#FAF8F5');
     }
   }
 
